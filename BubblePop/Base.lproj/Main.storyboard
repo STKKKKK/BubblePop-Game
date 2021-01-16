@@ -10,7 +10,7 @@
         <!--StartViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="StartViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
         <!--GameViewController-->
         <scene sceneID="yPx-e7-8Yh">
             <objects>
-                <viewController title="GameViewController" id="IwW-1b-vXa" sceneMemberID="viewController">
+                <viewController title="GameViewController" id="IwW-1b-vXa" customClass="GameViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XHH-Nn-irj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
