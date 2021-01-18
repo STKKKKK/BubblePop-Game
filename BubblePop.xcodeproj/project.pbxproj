@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B3B719B25B555D300572983 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3B719A25B555D300572983 /* Bubble.swift */; };
 		7B60C11325B3849600273C77 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B60C11225B3849600273C77 /* Launch Screen.storyboard */; };
 		7B60C11525B38D8600273C77 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B60C11425B38D8600273C77 /* StartGameViewController.swift */; };
 		7B60C11725B38DAB00273C77 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B60C11625B38DAB00273C77 /* GamePlayViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B3B719A25B555D300572983 /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		7B60C11225B3849600273C77 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7B60C11425B38D8600273C77 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		7B60C11625B38DAB00273C77 /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B3B719725B5557400572983 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7B3B719A25B555D300572983 /* Bubble.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		7B60C11825B38FAF00273C77 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 				7BF2C0B325B29AC600DA4FC8 /* SceneDelegate.swift */,
 				7BF2C0B525B29AC600DA4FC8 /* ViewController.swift */,
 				7BF2C0B725B29AC600DA4FC8 /* Main.storyboard */,
+				7B3B719725B5557400572983 /* Models */,
 				7B60C11825B38FAF00273C77 /* ViewControllers */,
 				7BF2C0BA25B29AC700DA4FC8 /* Assets.xcassets */,
 				7B60C11225B3849600273C77 /* Launch Screen.storyboard */,
@@ -153,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B60C11725B38DAB00273C77 /* GamePlayViewController.swift in Sources */,
+				7B3B719B25B555D300572983 /* Bubble.swift in Sources */,
 				7BF2C0B625B29AC600DA4FC8 /* ViewController.swift in Sources */,
 				7B60C11525B38D8600273C77 /* StartGameViewController.swift in Sources */,
 				7BF2C0B225B29AC600DA4FC8 /* AppDelegate.swift in Sources */,

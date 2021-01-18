@@ -20,10 +20,10 @@ class GamePlayViewController: UIViewController {
         
         print("GamePlayViewController:", name)
         
-        let defaults = UserDefaults.standard
-        name = defaults.string(forKey: "PlayerName") ?? "Default Name"
+//        let defaults = UserDefaults.standard
+//        name = defaults.string(forKey: "PlayerName") ?? "Default Name"
         
-        nameLabel.text = "Hello \(name)"
+//        nameLabel.text = "Hello \(name)"
     }
 
 
