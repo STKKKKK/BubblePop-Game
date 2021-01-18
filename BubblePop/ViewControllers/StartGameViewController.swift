@@ -30,7 +30,7 @@ class StartViewController: UIViewController {
 //                let defaults = UserDefaults.standard
 //                defaults.set(name, forKey: "PlayerName")
                 
-                self.performSegue(withIdentifier: "startGameSegue", sender: nil)
+//                self.performSegue(withIdentifier: "startGameSegue", sender: nil)
             } else {
                 print("Please enter a non-empty name")
             }
@@ -39,31 +39,39 @@ class StartViewController: UIViewController {
         }
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let identifier = segue.identifier {
+//            switch identifier {
+//            case "startGameSegue":
+//                print("Prepare Segue for", identifier);
+//
+//                if let gamePlayViewController = segue.destination as? GamePlayViewController {
+//                    if let name = nameTextFieid.text {
+//                        gamePlayViewController.name = name;
+//                    } else {
+//                        print("Name is empty")
+//                    }
+//                } else {
+//                    print("Type Cast Failed for Segue", identifier)
+//                }
+//
+//            break;
+//            default:
+//                print("Prepare Segue for unhandle identifier", identifier)
+//            }
+//        } else {
+//            print("Segue with empty identifier is petformed. Better check it.")
+//        }
+//    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            switch identifier {
-            case "startGameSegue":
-                print("Prepare Segue for", identifier);
-
-                if let gamePlayViewController = segue.destination as? GamePlayViewController {
-                    if let name = nameTextFieid.text {
-                        gamePlayViewController.name = name;
-                    } else {
-                        print("Name is empty")
-                    }
-                } else {
-                    print("Type Cast Failed for Segue", identifier)
-                }
-
-            break;
-            default:
-                print("Prepare Segue for unhandle identifier", identifier)
+        if segue.identifier == "startGameSegue" {
+            if let vc = segue.destination as? GamePlayViewController {
+                let name = nameTextFieid.text
+                vc.name = name!
             }
-        } else {
-            print("Segue with empty identifier is petformed. Better check it.")
         }
     }
-    
 }
 
 

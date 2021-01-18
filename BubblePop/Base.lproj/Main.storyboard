@@ -45,7 +45,7 @@
                         <outlet property="nameTextFieid" destination="uVw-Gt-dfI" id="NQZ-l1-CjX"/>
                         <outlet property="startButton" destination="jtB-xA-oD0" id="iOV-kT-a5L"/>
                         <outlet property="titleLabel" destination="IY5-og-8oJ" id="vSk-sx-0xR"/>
-                        <segue destination="IwW-1b-vXa" kind="show" id="HvG-q0-KTx"/>
+                        <segue destination="IwW-1b-vXa" kind="show" identifier="startGameSegue" id="HvG-q0-KTx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
