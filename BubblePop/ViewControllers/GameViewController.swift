@@ -10,7 +10,14 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
+    
     var player: String?
+    
+    let defaultGameTime = 60
+    let defaultMaxBubble = 15
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +25,17 @@ class GameViewController: UIViewController {
         let defaults = UserDefaults.standard
         player = defaults.string(forKey: "newPlayer")
         print("GamePlayViewController:", player!)
+        
+        var gameTime = defaults.integer(forKey: "gameTime")
+        var maxBubble = defaults.integer(forKey: "maxBubble")
+        if gameTime == 0 {
+            gameTime = defaultGameTime
+        }
+        if maxBubble == 0 {
+            maxBubble = defaultMaxBubble
+        }
+        timeLabel.text = String(gameTime)
+        
     }
     
 }
