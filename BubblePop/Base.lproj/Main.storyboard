@@ -44,6 +44,7 @@
                                         <rect key="frame" x="0.0" y="76" width="134" height="30"/>
                                         <state key="normal" title="Start Game"/>
                                         <connections>
+                                            <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iwG-Ql-4Ym"/>
                                             <segue destination="ppS-lF-pja" kind="show" id="J5c-Rx-X9v"/>
                                         </connections>
                                     </button>
@@ -80,6 +81,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ohX-Me-AjN"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="0ZI-qt-Z9C" id="8Z2-JJ-vXg"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
@@ -112,8 +116,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIc-vy-m1r">
-                                <rect key="frame" x="161.5" y="667" width="91" height="30"/>
-                                <state key="normal" title="Save Options"/>
+                                <rect key="frame" x="133" y="655" width="148" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Save Settings"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
