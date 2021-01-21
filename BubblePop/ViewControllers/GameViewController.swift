@@ -15,8 +15,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var highScoreLabel: UILabel!
     
     var player: String?
-
+    var timer: Timer?
+    var timeLeft = 0
+    var score = 0
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,8 +27,26 @@ class GameViewController: UIViewController {
         player = defaults.string(forKey: "newPlayer")
         print("GamePlayViewController:", player!)
         
+        let highScore = defaults.integer(forKey: "highScore")
+        highScoreLabel.text = String(highScore)
+        
         let settings = Settings()
-        timeLabel.text = String(settings.gameTime)        
+        timeLeft = settings.gameTime
+        timeLabel.text = String(timeLeft)
+        scoreLabel.text = String(score)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        <#code#>
+    }
+    
+    func uodateTime() {
+        if timeLeft > 0 {
+            timeLeft -= 1
+            timeLabel.text = String(timeLeft)
+        }
+    }
+    
+    
     
 }
