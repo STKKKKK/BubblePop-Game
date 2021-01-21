@@ -24,8 +24,8 @@ class SettingsViewController: UIViewController {
     
     @IBAction func saveSettings(_ sender: Any) {
         let settings = Settings()
-        settings.saveGameTime(gameTimeTextField.text)
-        settings.saveMaxBubble(maxBubbleTextField.text)
+        settings.setGameTime(gameTimeTextField.text)
+        settings.setMaxBubble(maxBubbleTextField.text)
         self.viewDidLoad()
     }
         

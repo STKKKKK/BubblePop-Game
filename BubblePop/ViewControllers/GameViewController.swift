@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var BubblesView: UIView!
     
     var player: String?
     var timer: Timer?
@@ -37,16 +38,27 @@ class GameViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        <#code#>
+        super.viewDidAppear(true)
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+            self.updateTimeLabel()
+            self.updateBubbles()
+        })
+        timer?.fire()
     }
     
-    func uodateTime() {
+    func updateTimeLabel() {
         if timeLeft > 0 {
             timeLeft -= 1
             timeLabel.text = String(timeLeft)
+        } else {
+            timer?.invalidate()
+            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
         }
     }
     
-    
+    func updateBubbles() {
+        
+    }
     
 }
