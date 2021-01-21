@@ -170,7 +170,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="S8U-A1-N5p"/>
                     <connections>
-                        <outlet property="BubblesView" destination="8QF-vn-1tv" id="gdM-SZ-KDL"/>
+                        <outlet property="bubblesView" destination="8QF-vn-1tv" id="DMM-qP-Jy1"/>
                         <outlet property="highScoreLabel" destination="jRm-Ti-1Gb" id="SXn-U1-Ye6"/>
                         <outlet property="scoreLabel" destination="r6u-R2-uOE" id="0Fe-Ra-brC"/>
                         <outlet property="timeLabel" destination="buv-Ge-sn2" id="MWD-go-VZC"/>
