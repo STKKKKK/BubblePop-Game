@@ -11,11 +11,10 @@ import UIKit
 
 class Bubble: UIButton {
     
-    let size = 50
     var score = 0
     
-    init(x: Int, y: Int) {
-        super.init(frame: CGRect(x: x, y: y, width: size, height: size))
+    init(_ x: Int, _ y: Int, _ radius: Int) {
+        super.init(frame: CGRect(x: x, y: y, width: 2*radius, height: 2*radius))
         self.layer.cornerRadius = 0.5 * self.bounds.size.width
         
         switch Int.random(in: 1...100) {
@@ -41,19 +40,6 @@ class Bubble: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func addTarget(self, action: Selector, for controlEvents: UIControl.Event) {
-        <#code#>
-    }
-    
-//    func gainScore() -> Int {
-//        return score
-//    }
-    
-    @IBAction func bubblePressed(_ sender: UIButton) {
-        sender.removeFromSuperview()
-        // update the player's score
-        }
-    }
     
 //    func appear() {
 //        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {

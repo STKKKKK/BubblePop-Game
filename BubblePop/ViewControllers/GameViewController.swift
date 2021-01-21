@@ -15,11 +15,14 @@ class GameViewController: UIViewController {
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var bubblesView: UIView!
     
+    let bubbleRadius = 30
+    let bubbleUpdateRate = 0.6
     
     var player: String?
     var timer = Timer()
     var timeLeft = 0
     var score = 0
+    var maxBubble = 0
     
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
@@ -75,19 +78,14 @@ class GameViewController: UIViewController {
         timeLeft = settings.gameTime
         timeLabel.text = String(timeLeft)
         scoreLabel.text = String(score)
+        maxBubble = settings.maxBubble
         
-        let a = Int(bubblesView.frame.minX)
-        let b = Int(bubblesView.frame.maxX)
-        let c = Int(bubblesView.frame.minY)
-        let d = Int(bubblesView.frame.maxY)
-        print(a, b, c, d)
-
         //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counter), userInfo: nil, repeats: true)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             timer in
             self.counter()
-            //self.printing()
-            self.generateBubble()
+            self.removeBubbles()
+            self.addBubbles()
             //self.removeBubble()
         }
         
@@ -100,39 +98,49 @@ class GameViewController: UIViewController {
         if timeLeft == 0 {
             timer.invalidate()
             print("Game is over!")
-            
-//            let vc = storyboard?.instantiateViewController(identifier: "GreenViewController") as! GreenViewController
-//            present(vc, animated: true, completion: nil)
         }
     }
     
-    @objc func printing() {
-        print("The timer is counting down!")
+    
+    func removeBubbles() {
+        for bubble in bubblesView.subviews {
+            if Double.random(in: 1...100) < bubbleUpdateRate*100 {
+                bubble.removeFromSuperview()
+            }
+        }
     }
     
-    @objc func generateBubble() {
-        // create bubble class
-        let bubble = UIButton()
+    func addBubbles() {
+//        let bubble = UIButton()
         
-        let a = Int(bubblesView.frame.minX)
+        let minX = Int(bubblesView.frame.minX) + bubbleRadius
+        let maxX = Int(bubblesView.frame.maxX) - bubbleRadius
+        let minY = Int(bubblesView.frame.minY) + bubbleRadius
+        let maxY = Int(bubblesView.frame.maxY) - bubbleRadius
         
-//        let xAxis = Int.random(in: 20...200)
-//        let yAxis = Int.random(in: 20...200)
-        let xAxis = Int.random(in: 20...200)
-        let yAxis = Int.random(in: 20...200)
+        let newbubblesNum = Int.random(in: 0...maxBubble - bubblesView.subviews.count)
+        for _ in 0...newbubblesNum {
+            let x = Int.random(in: minX...maxX)
+            let y = Int.random(in: minY...maxY)
+            let bubble = Bubble(x, y, bubbleRadius)
+            
 
-        bubble.frame = CGRect(x: xAxis, y: yAxis, width: 50, height: 50)
-        bubble.layer.cornerRadius = 0.5 * bubble.bounds.size.width
-        bubble.backgroundColor = .red
-        bubble.addTarget(self, action: #selector(bubblePressed), for: .touchUpInside)
-        
-        self.bubblesView.addSubview(bubble)
-        
+    //        bubble.frame = CGRect(x: x, y: y, width: bubbleSize, height: bubbleSize)
+    //        bubble.layer.cornerRadius = 0.5 * bubble.bounds.size.width
+    //        bubble.backgroundColor = .red
+            
+            bubble.addTarget(self, action: #selector(bubblePressed), for: .touchUpInside)
+            
+            self.bubblesView.addSubview(bubble)
+            
+        }
     }
     
-    @IBAction func bubblePressed(_ sender: UIButton) {
+    @IBAction func bubblePressed(_ sender: Bubble) {
         sender.removeFromSuperview()
         // update the player's score
+        score += sender.score
+        scoreLabel.text = String(score)
         print("This bubble is pressed")
     }
     

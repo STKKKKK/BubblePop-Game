@@ -12,8 +12,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var gameTimeTextField: UITextField!
     @IBOutlet weak var maxBubbleTextField: UITextField!
-        
-    
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
