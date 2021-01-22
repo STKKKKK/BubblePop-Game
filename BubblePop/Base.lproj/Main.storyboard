@@ -153,18 +153,18 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QF-vn-1tv">
-                                <rect key="frame" x="0.0" y="147" width="414" height="715"/>
+                                <rect key="frame" x="5" y="147" width="404" height="710"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8QF-vn-1tv" firstAttribute="leading" secondItem="XZh-Qa-LQY" secondAttribute="leading" id="25M-P3-EgL"/>
+                            <constraint firstItem="8QF-vn-1tv" firstAttribute="leading" secondItem="XZh-Qa-LQY" secondAttribute="leading" constant="5" id="25M-P3-EgL"/>
                             <constraint firstItem="8QF-vn-1tv" firstAttribute="top" secondItem="NzC-Mt-peZ" secondAttribute="bottom" constant="5" id="43h-Q4-RhR"/>
-                            <constraint firstItem="XZh-Qa-LQY" firstAttribute="bottom" secondItem="8QF-vn-1tv" secondAttribute="bottom" id="6MT-rb-D07"/>
+                            <constraint firstItem="XZh-Qa-LQY" firstAttribute="bottom" secondItem="8QF-vn-1tv" secondAttribute="bottom" constant="5" id="6MT-rb-D07"/>
                             <constraint firstItem="NzC-Mt-peZ" firstAttribute="centerX" secondItem="iQP-iN-LcC" secondAttribute="centerX" id="hFp-oX-czu"/>
                             <constraint firstItem="NzC-Mt-peZ" firstAttribute="top" secondItem="XZh-Qa-LQY" secondAttribute="top" id="kai-x9-Sdg"/>
-                            <constraint firstItem="XZh-Qa-LQY" firstAttribute="trailing" secondItem="8QF-vn-1tv" secondAttribute="trailing" id="kwu-8G-NPn"/>
+                            <constraint firstItem="XZh-Qa-LQY" firstAttribute="trailing" secondItem="8QF-vn-1tv" secondAttribute="trailing" constant="5" id="kwu-8G-NPn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XZh-Qa-LQY"/>
                     </view>
@@ -269,6 +269,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zr9-X5-dIS"/>
+        <segue reference="axv-Tj-EwD"/>
     </inferredMetricsTieBreakers>
 </document>

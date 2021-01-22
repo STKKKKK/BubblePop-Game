@@ -13,8 +13,8 @@ class Bubble: UIButton {
     
     var score = 0
     
-    init(_ x: Int, _ y: Int, _ radius: Int) {
-        super.init(frame: CGRect(x: x, y: y, width: 2*radius, height: 2*radius))
+    init(_ x: Int, _ y: Int, _ size: Int) {
+        super.init(frame: CGRect(x: x, y: y, width: size, height: size))
         self.layer.cornerRadius = 0.5 * self.bounds.size.width
         
         switch Int.random(in: 1...100) {
