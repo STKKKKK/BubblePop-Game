@@ -16,13 +16,15 @@ class GameViewController: UIViewController {
     @IBOutlet weak var bubblesView: UIView!
     
     let bubbleRadius = 30
-    let bubbleUpdateRate = 0.6
+    let bubbleUpdateRate = 0.4
     
     var player: String?
     var timer = Timer()
     var timeLeft = 0
-    var score = 0
+    var currentScore = 0
     var maxBubble = 0
+    
+    var lastPressedColor: UIColor?
     
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
@@ -77,8 +79,14 @@ class GameViewController: UIViewController {
         let settings = Settings()
         timeLeft = settings.gameTime
         timeLabel.text = String(timeLeft)
-        scoreLabel.text = String(score)
+        scoreLabel.text = String(currentScore)
         maxBubble = settings.maxBubble
+        
+        let minX = Int(bubblesView.frame.minX) + bubbleRadius
+        let maxX = Int(bubblesView.frame.maxX) - bubbleRadius
+        let minY = Int(bubblesView.frame.minY) + bubbleRadius
+        let maxY = Int(bubblesView.frame.maxY) - bubbleRadius
+        print(minX, maxX, minY, maxY)
         
         //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counter), userInfo: nil, repeats: true)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
@@ -123,25 +131,41 @@ class GameViewController: UIViewController {
             let x = Int.random(in: minX...maxX)
             let y = Int.random(in: minY...maxY)
             let bubble = Bubble(x, y, bubbleRadius)
-            
+            print(x, y)
 
     //        bubble.frame = CGRect(x: x, y: y, width: bubbleSize, height: bubbleSize)
     //        bubble.layer.cornerRadius = 0.5 * bubble.bounds.size.width
     //        bubble.backgroundColor = .red
             
             bubble.addTarget(self, action: #selector(bubblePressed), for: .touchUpInside)
-            
+
             self.bubblesView.addSubview(bubble)
             
         }
     }
     
+//    func pop() {
+//        bubble.addTarget(self, action: #selector(bubblePressed), for: .touchUpInside)
+//
+//        self.bubblesView.addSubview(bubble)
+//    }
+    
     @IBAction func bubblePressed(_ sender: Bubble) {
         sender.removeFromSuperview()
-        // update the player's score
-        score += sender.score
-        scoreLabel.text = String(score)
-        print("This bubble is pressed")
+        
+        if sender.backgroundColor == lastPressedColor {
+            // Round to the nearest integer
+            let scoreGained = Double(sender.score) * 1.5
+            if scoreGained - Double(Int(scoreGained)) >= 0.5 {
+                currentScore += Int(scoreGained) + 1
+            } else {
+                currentScore += Int(scoreGained)
+            }
+        } else {
+            currentScore += sender.score
+        }
+        scoreLabel.text = String(currentScore)
+        lastPressedColor = sender.backgroundColor
     }
     
 //    @IBAction func goToHighScore(_ sender: UIButton) {
