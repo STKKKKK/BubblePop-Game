@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     
-    
+    let dataStorage = DataStorage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +20,14 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func startGame(_ sender: Any) {
-        if var name = nameTextField.text {
-            if name.count == 0 {
-                name = "Player"
-            }
-            let defaults = UserDefaults.standard
-            defaults.set(name, forKey: "newPlayer")
-        }
+//        if var name = nameTextField.text {
+//            if name.count == 0 {
+//                name = "Player"
+//            }
+//            let defaults = UserDefaults.standard
+//            defaults.set(name, forKey: "newPlayer")
+//        }
+        dataStorage.setNewPlayer(nameTextField.text)
     }
 }
 

@@ -54,8 +54,8 @@ class DataStorage {
         defaults.set(maxBubble, forKey: "maxBubble")
     }
     
-    func setNewPlayer(_ inputName: String) {
-        newPlayer = adjustName(inputName)
+    func setNewPlayer(_ inputText: String?) {
+        newPlayer = adjustName(inputText)
         defaults.set(newPlayer, forKey: "newPlayer")
     }
     

@@ -25,30 +25,35 @@ class GameViewController: UIViewController {
     var highScore = 0
     var maxBubble = 0
     var lastPressedColor: UIColor?
-
+    
+    let dataStorage = DataStorage()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = UserDefaults.standard
-        player = defaults.string(forKey: "newPlayer")
-        // print("GamePlayViewController:", player!)
-        highScore = defaults.integer(forKey: "highScore")
+//        let defaults = UserDefaults.standard
+//        player = defaults.string(forKey: "newPlayer")
+//        print("GamePlayViewController:", player!)
+//        highScore = defaults.integer(forKey: "highScore")
+//        highScoreLabel.text = String(highScore)
+//
+//        let settings = Settings()
+//        timeLeft = settings.gameTime
+//        timeLabel.text = String(timeLeft)
+//        scoreLabel.text = String(currentScore)
+//        maxBubble = settings.maxBubble
+        
+        player = dataStorage.newPlayer
+        print(player!)
+        highScore = dataStorage.highScore
         highScoreLabel.text = String(highScore)
-
-        let settings = Settings()
-        timeLeft = settings.gameTime
+        timeLeft = dataStorage.gameTime
         timeLabel.text = String(timeLeft)
         scoreLabel.text = String(currentScore)
-        maxBubble = settings.maxBubble
+        maxBubble = dataStorage.maxBubble
         
-//        let minX = Int(bubblesView.frame.minX) + bubbleSize
-//        let maxX = Int(bubblesView.frame.maxX) - minX
-//        let minY = Int(bubblesView.frame.minY) + bubbleSize
-//        let maxY = Int(bubblesView.frame.maxY) - minY
-//        print(minX, maxX, minY, maxY)
         
-        //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counter), userInfo: nil, repeats: true)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             timer in
             self.updateTime()
@@ -71,6 +76,10 @@ class GameViewController: UIViewController {
             //var scoreRecord = defaults.dictionary(forKey: "scoreRecord")
             //scoreRecord[player] = score
             
+            dataStorage.setNewRecord(currentScore)
+            if currentScore > dataStorage.highScore {
+                dataStorage.setHighScore(currentScore)
+            }
             self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
         }
     }
