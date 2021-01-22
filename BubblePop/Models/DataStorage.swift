@@ -12,8 +12,7 @@ class DataStorage {
     
     let defaults = UserDefaults.standard
     
-    // In fact, this is the key list except recorded players name.
-    let keyList = ["gameTime", "maxbubble", "newPlayer", "highScore"]
+    //let nonPlayerkeyList = ["gameTime", "maxbubble", "newPlayer", "highScore"]
     
     var gameTime = 0
     let defaultGameTime = 60
@@ -26,9 +25,8 @@ class DataStorage {
     let maxMaxBubble = 20
     
     var newPlayer: String?
-    
     var highScore = 0
-    
+    var records: [Record] = []
     
     init() {
         gameTime = defaults.integer(forKey: "gameTime")
@@ -40,8 +38,10 @@ class DataStorage {
             maxBubble = defaultMaxBubble
         }
         newPlayer = defaults.string(forKey: "newPlayer")
-        // records = defaults.dictionary(forKey: "records")
         highScore = defaults.integer(forKey: "highScore")
+        if let recordS = defaults.array(forKey: "records") as? [Record] {
+            records = recordS
+        }
     }
     
     func setGameTime(_ inputText: String?) {
@@ -61,14 +61,18 @@ class DataStorage {
     
     func setNewRecord(_ score: Int) {
         if let player = newPlayer {
-            defaults.set(score, forKey: player)
+            // defaults.set(score, forKey: player)
+            
+            let record = Record(player, score)
+            records.append(record)
+            
+            defaults.set(records, forKey: "records")
         }
     }
     
     func setHighScore(_ score: Int) {
         defaults.set(score, forKey: "highScore")
     }
-    
         
     // Adjust Invalid Input of a Setting Field
     func adjustSetting(_ inputText: String?, _ min: Int, _ max: Int) -> Int {
@@ -93,8 +97,6 @@ class DataStorage {
         if let text = inputText {
             if defaults.object(forKey: text) != nil {
                 return text + "1"   // adjust exist player name
-            } else if keyList.contains(text){
-                return text + "00"  // adjust to not conflict non-player keys
             } else if text.count == 0 {
                 return "player"    // adjust empty input
             } else {
@@ -104,5 +106,9 @@ class DataStorage {
             return "player"  // adjust nil
         }
     }
+    
+//    else if nonPlayerkeyList.contains(text){
+//                   return text + "00"  // adjust to not conflict non-player keys
+//               }
     
 }

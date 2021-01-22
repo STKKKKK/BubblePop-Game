@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var gameTimeTextField: UITextField!
     @IBOutlet weak var maxBubbleTextField: UITextField!
             
-    let dataStorage = DataStorage()
+    //let dataStorage = DataStorage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
 //        let settings = Settings()
 //        gameTimeTextField.text = String(settings.gameTime)
 //        maxBubbleTextField.text = String(settings.maxBubble)
+        let dataStorage = DataStorage()
         gameTimeTextField.text = String(dataStorage.gameTime)
         maxBubbleTextField.text = String(dataStorage.maxBubble)
     }
@@ -29,9 +30,9 @@ class SettingsViewController: UIViewController {
 //        let settings = Settings()
 //        settings.setGameTime(gameTimeTextField.text)
 //        settings.setMaxBubble(maxBubbleTextField.text)
-        
-        dataStorage.setGameTime(gameTimeTextField.text)
-        dataStorage.setMaxBubble(gameTimeTextField.text)
+        let dataStorage2 = DataStorage()
+        dataStorage2.setGameTime(gameTimeTextField.text)
+        dataStorage2.setMaxBubble(maxBubbleTextField.text)
         self.viewDidLoad()
     }
         

@@ -45,7 +45,7 @@ class GameViewController: UIViewController {
 //        maxBubble = settings.maxBubble
         
         player = dataStorage.newPlayer
-        print(player!)
+        //print(player!)
         highScore = dataStorage.highScore
         highScoreLabel.text = String(highScore)
         timeLeft = dataStorage.gameTime
