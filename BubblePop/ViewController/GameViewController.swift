@@ -150,22 +150,18 @@ class GameViewController: UIViewController {
         
         if sender.backgroundColor == lastPressedColor {
             // Round to the nearest integer
-            let scoreGained = Double(sender.score) * 1.5
-            if scoreGained - Double(Int(scoreGained)) >= 0.5 {
-                currentScore += Int(scoreGained) + 1
-            } else {
-                currentScore += Int(scoreGained)
-            }
+//            let scoreGained = Double(sender.score) * 1.5
+//            if scoreGained - Double(Int(scoreGained)) >= 0.5 {
+//                currentScore += Int(scoreGained) + 1
+//            } else {
+//                currentScore += Int(scoreGained)
+//            }
+            currentScore += toNearestInteger(Double(sender.score)*1.5)
         } else {
             currentScore += sender.score
         }
         lastPressedColor = sender.backgroundColor
         scoreLabel.text = String(currentScore)
     }
-    
-//    @IBAction func goToHighScore(_ sender: UIButton) {
-//        let vc = storyboard?.instantiateViewController(identifier: "GreenViewController") as! GreenViewController
-//        present(vc, animated: true, completion: nil)
-//    }
     
 }

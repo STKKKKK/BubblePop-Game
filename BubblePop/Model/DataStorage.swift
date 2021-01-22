@@ -12,8 +12,6 @@ class DataStorage {
     
     let defaults = UserDefaults.standard
     
-    //let nonPlayerkeyList = ["gameTime", "maxbubble", "newPlayer", "highScore"]
-    
     var gameTime = 0
     let defaultGameTime = 60
     let minGameTime = 5
@@ -45,17 +43,17 @@ class DataStorage {
     }
     
     func setGameTime(_ inputText: String?) {
-        gameTime = adjustSetting(inputText, minGameTime, maxGameTime)
+        gameTime = self.adjustSetting(inputText, minGameTime, maxGameTime)
         defaults.set(gameTime, forKey: "gameTime")
     }
     
     func setMaxBubble(_ inputText: String?) {
-        maxBubble = adjustSetting(inputText, minMaxBubble, maxMaxBubble)
+        maxBubble = self.adjustSetting(inputText, minMaxBubble, maxMaxBubble)
         defaults.set(maxBubble, forKey: "maxBubble")
     }
     
     func setNewPlayer(_ inputText: String?) {
-        newPlayer = adjustName(inputText)
+        newPlayer = self.adjustName(inputText)
         defaults.set(newPlayer, forKey: "newPlayer")
     }
     
@@ -63,16 +61,87 @@ class DataStorage {
         if let player = newPlayer {
             // defaults.set(score, forKey: player)
             
-            let record = Record(player, score)
-            records.append(record)
+            
+            let newRecord = Record(player, score)
+            for record in records {
+                if newRecord.score > record.score {
+                    if newRecord.rank < record.rank {
+                        newRecord.setRank(record.rank)
+                    }
+                    record.dropRank()
+                } else if newRecord.score == record.score {
+                    newRecord.setRank(record.rank)
+                    break
+                }
+            }
+            records.append(newRecord)
+            
+//            records.append(Record(player, score))
+            
+//            let temp = records
+//            for record in temp {
+//                if score > record.score {
+//                    switch record.rank {
+//                    case 1:
+//                        newRecord.setRank(1)
+//                    }
+                
+                
+//                if record.rank == 1 && score > record.score {
+//                    records.append(Record(player, score, rank:1))
+//                    return
+//                } else if record.rank == 2 &&
+//            }
             
             defaults.set(records, forKey: "records")
         }
     }
     
-    func setHighScore(_ score: Int) {
-        defaults.set(score, forKey: "highScore")
-    }
+//    func setHighScore(_ score: Int) {
+//        defaults.set(score, forKey: "highScore")
+//    }
+//
+//    func getScoreList() -> [Int]{
+//        var ScoreList: [Int] = []
+//        for record in records {
+//            ScoreList.append(record.score)
+//        }
+//        return ScoreList
+//    }
+//
+//    func getNameList() {
+//
+//    }
+//
+//    func getHighRecords(rankBefore: Int) {
+//        var highRecords: [Record] = []
+//        var scoreList = getScoreList()
+//        for _ in 1...rankBefore {
+//            let max = scoreList.max()
+//            scoreList = scoreList.filter{ $0 != max }
+//            for record in records {
+//                if record.score == max {
+//                    highRecords.append(record)
+//                    scoreList.re
+//                }
+//            }
+//        }
+//    }
+
+//    func getRecords(byRanks: [Int]) {
+//        var tempRecords = records
+//        var i = 0
+//        while i < tempRecords.count-1 {
+//            var j = 0
+//            while j < tempRecords.count-1-i {
+//                if tempRecords[j+1].score < tempRecords[j].score {
+//                    let temp = tempRecords[j]
+//                    tempRecords[j] = tempRecords[j+1]
+//                    tempRecords[j+1] = temp
+//                }
+//            }
+//        }
+//    }
         
     // Adjust Invalid Input of a Setting Field
     func adjustSetting(_ inputText: String?, _ min: Int, _ max: Int) -> Int {

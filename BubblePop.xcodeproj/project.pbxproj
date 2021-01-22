@@ -11,6 +11,7 @@
 		7B0A65F325BAE90C00DD07D8 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0A65F225BAE90C00DD07D8 /* RecordTableViewCell.swift */; };
 		7B0A65F525BAEE5B00DD07D8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0A65F425BAEE5B00DD07D8 /* TableViewController.swift */; };
 		7B0A65F725BAF6C500DD07D8 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0A65F625BAF6C500DD07D8 /* Record.swift */; };
+		7B4548D025BB59D400FCCBAE /* calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4548CF25BB59D400FCCBAE /* calculate.swift */; };
 		7B950E0D25B98E200075EB8F /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B950E0C25B98E200075EB8F /* Bubble.swift */; };
 		7B95C17425B80AC800AE5317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C17325B80AC800AE5317 /* AppDelegate.swift */; };
 		7B95C17625B80AC800AE5317 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C17525B80AC800AE5317 /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 		7B0A65F225BAE90C00DD07D8 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		7B0A65F425BAEE5B00DD07D8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7B0A65F625BAF6C500DD07D8 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		7B4548CF25BB59D400FCCBAE /* calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculate.swift; sourceTree = "<group>"; };
 		7B950E0C25B98E200075EB8F /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		7B95C17025B80AC800AE5317 /* BubblePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubblePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B95C17325B80AC800AE5317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7B4548CE25BB596800FCCBAE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7B4548CF25BB59D400FCCBAE /* calculate.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		7B95C16725B80AC800AE5317 = {
 			isa = PBXGroup;
 			children = (
@@ -86,9 +96,10 @@
 				7B95C17525B80AC800AE5317 /* SceneDelegate.swift */,
 				7B95C17725B80AC800AE5317 /* ViewController.swift */,
 				7B95C17925B80AC800AE5317 /* Main.storyboard */,
-				7BFF836725B80C3D00B394C4 /* ViewControllers */,
+				7BFF836725B80C3D00B394C4 /* ViewController */,
 				7B0A65F125BAE86E00DD07D8 /* View */,
-				7BFF836625B80C3600B394C4 /* Models */,
+				7BFF836625B80C3600B394C4 /* Model */,
+				7B4548CE25BB596800FCCBAE /* Utility */,
 				7B95C17C25B80AC900AE5317 /* Assets.xcassets */,
 				7B95C17E25B80AC900AE5317 /* LaunchScreen.storyboard */,
 				7B95C18125B80AC900AE5317 /* Info.plist */,
@@ -96,17 +107,17 @@
 			path = BubblePop;
 			sourceTree = "<group>";
 		};
-		7BFF836625B80C3600B394C4 /* Models */ = {
+		7BFF836625B80C3600B394C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				7B950E0C25B98E200075EB8F /* Bubble.swift */,
 				7B0A65EF25BABDDC00DD07D8 /* DataStorage.swift */,
 				7B0A65F625BAF6C500DD07D8 /* Record.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		7BFF836725B80C3D00B394C4 /* ViewControllers */ = {
+		7BFF836725B80C3D00B394C4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				7BFF836825B80CA400B394C4 /* MainViewController.swift */,
@@ -115,7 +126,7 @@
 				7BFF836E25B80D9000B394C4 /* ScoreboardViewController.swift */,
 				7B0A65F425BAEE5B00DD07D8 /* TableViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 				7B95C17425B80AC800AE5317 /* AppDelegate.swift in Sources */,
 				7B95C17625B80AC800AE5317 /* SceneDelegate.swift in Sources */,
 				7BFF836B25B80D0400B394C4 /* SettingsViewController.swift in Sources */,
+				7B4548D025BB59D400FCCBAE /* calculate.swift in Sources */,
 				7B0A65F725BAF6C500DD07D8 /* Record.swift in Sources */,
 				7B0A65F525BAEE5B00DD07D8 /* TableViewController.swift in Sources */,
 				7B0A65F025BABDDC00DD07D8 /* DataStorage.swift in Sources */,
