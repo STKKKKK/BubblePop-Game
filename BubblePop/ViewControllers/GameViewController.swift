@@ -25,47 +25,7 @@ class GameViewController: UIViewController {
     var highScore = 0
     var maxBubble = 0
     var lastPressedColor: UIColor?
-    
-    let defaults = UserDefaults.standard
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view.
-//        let defaults = UserDefaults.standard
-//        player = defaults.string(forKey: "newPlayer")
-//        print("GamePlayViewController:", player!)
-//
-//        let highScore = defaults.integer(forKey: "highScore")
-//        highScoreLabel.text = String(highScore)
-//
-//        let settings = Settings()
-//        timeLeft = settings.gameTime
-//        timeLabel.text = String(timeLeft)
-//        scoreLabel.text = String(score)
-//    }
-//
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(true)
-//
-//        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-//            self.updateTimeLabel()
-//            self.updateBubbles()
-//        })
-//        timer?.fire()
-//    }
-//
-//    func updateTimeLabel() {
-//        if timeLeft > 0 {
-//            timeLeft -= 1
-//            timeLabel.text = String(timeLeft)
-//        } else {
-//            timer?.invalidate()
-//            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
-//        }
-//    }
-//
-//    func updateBubbles() {
-//
-//    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +65,12 @@ class GameViewController: UIViewController {
         
         if timeLeft == 0 {
             timer.invalidate()
+            
             print("Game is over!")
+            //let defaults = UserDefaults.standard
+            //var scoreRecord = defaults.dictionary(forKey: "scoreRecord")
+            //scoreRecord[player] = score
+            
             self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
         }
     }

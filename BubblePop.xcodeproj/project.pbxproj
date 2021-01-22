@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0A65F025BABDDC00DD07D8 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0A65EF25BABDDC00DD07D8 /* DataStorage.swift */; };
 		7B950E0D25B98E200075EB8F /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B950E0C25B98E200075EB8F /* Bubble.swift */; };
 		7B95C17425B80AC800AE5317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C17325B80AC800AE5317 /* AppDelegate.swift */; };
 		7B95C17625B80AC800AE5317 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C17525B80AC800AE5317 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B0A65EF25BABDDC00DD07D8 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		7B950E0C25B98E200075EB8F /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		7B95C17025B80AC800AE5317 /* BubblePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubblePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B95C17325B80AC800AE5317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				7BFF837025B8B86200B394C4 /* Settings.swift */,
 				7B950E0C25B98E200075EB8F /* Bubble.swift */,
+				7B0A65EF25BABDDC00DD07D8 /* DataStorage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				7B95C17425B80AC800AE5317 /* AppDelegate.swift in Sources */,
 				7B95C17625B80AC800AE5317 /* SceneDelegate.swift in Sources */,
 				7BFF836B25B80D0400B394C4 /* SettingsViewController.swift in Sources */,
+				7B0A65F025BABDDC00DD07D8 /* DataStorage.swift in Sources */,
 				7BFF836D25B80D5800B394C4 /* GameViewController.swift in Sources */,
 				7BFF836925B80CA400B394C4 /* MainViewController.swift in Sources */,
 			);
