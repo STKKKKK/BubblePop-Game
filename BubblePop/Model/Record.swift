@@ -13,7 +13,7 @@ class Record {
     
     var player: String
     var score: Int
-    var rank = -1   // default rank,
+//    var rank = -1   // default rank,
     
     init(_ player: String, _ score: Int) {
         self.player = player
@@ -26,13 +26,13 @@ class Record {
 //        self.rank = rank
 //    }
     
-    func setRank(_ rank: Int) {
-        self.rank = rank
-    }
-    
-    func dropRank() {
-        self.rank -= 1
-    }
+//    func setRank(_ rank: Int) {
+//        self.rank = rank
+//    }
+//    
+//    func dropRank() {
+//        self.rank += 1
+//    }
 //
 //    func discardRank() {
 //        self.rank = -1

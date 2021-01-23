@@ -8,51 +8,64 @@
 
 import UIKit
 
-class ScoreboardViewController: UITableViewController {
+class ScoreboardViewController: UIViewController {
 
+    // @IBOutlet var recordTabelView: UITableView!
+    
     let dataStorage = DataStorage()
+    
+    var records: [Record] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.tableView.reloadData()
-        self.tableView.tableFooterView = UIView()
-        
+        records = dataStorage.records
+//        self.tableView.reloadData()
+//        self.tableView.tableFooterView = UIView()
     }
+}
+    
+//extension ViewController: UITableViewDataSource {
+//    let dataStorage = DataStorage()
+//
+//    var records: [Record] = []
+//
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return records.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath)
+//
+//        let record = records[indexPath.row]
+//        cell.playerLabel.text = record.player
+//        cell.scoreLabel.text = String(record.score)
+//        return cell
+//    }
+//
+//}
     
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordTableViewCell", for: indexPath) as! RecordTableViewCell
-        
-        let records = dataStorage.records.sorted
-        
-//        for record in records {
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 //
-//            if record.score <
-//        }
-        let record = records[indexPath.row]
-        cell.playerLabel.text = record.player
-        cell.scoreLabel.text = "\(record.score)"
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return records.count
+//    }
+//
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordTableViewCell", for: indexPath) as! RecordTableViewCell
+//
+//        let record = records[indexPath.row]
+//        cell.playerLabel.text = record.player
+//        cell.scoreLabel.text = String(record.score)
+//        return cell
+//    }
     
-    func sortRecords(_ records: [Record]) -> [Record] {
-        var temp = -1
-        for record in records {
-            if record.score > temp {
-                temp = record.score
-            }
-        }
-    }
-}
+// }

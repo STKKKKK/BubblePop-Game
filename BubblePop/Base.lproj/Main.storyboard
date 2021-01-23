@@ -34,9 +34,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFG-iT-1nm">
                                         <rect key="frame" x="0.0" y="148" width="134" height="30"/>
                                         <state key="normal" title="Scoreboard"/>
-                                        <connections>
-                                            <segue destination="1ur-Qf-rBw" kind="show" id="yoL-3g-PTG"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMt-1C-s9U">
                                         <rect key="frame" x="0.0" y="220" width="134" height="30"/>
@@ -158,7 +155,6 @@
                         <outlet property="highScoreLabel" destination="jRm-Ti-1Gb" id="SXn-U1-Ye6"/>
                         <outlet property="scoreLabel" destination="r6u-R2-uOE" id="0Fe-Ra-brC"/>
                         <outlet property="timeLabel" destination="buv-Ge-sn2" id="MWD-go-VZC"/>
-                        <segue destination="1ur-Qf-rBw" kind="show" identifier="scoreboardSegue" id="0GV-1i-v7v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tie-i2-HdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,64 +231,6 @@
             </objects>
             <point key="canvasLocation" x="173.91304347826087" y="908.70535714285711"/>
         </scene>
-        <!--Scoreboard View Controller-->
-        <scene sceneID="bxP-wx-xgH">
-            <objects>
-                <tableViewController id="1ur-Qf-rBw" customClass="ScoreboardViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9JI-B7-Kh0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LFi-Xd-Xwl" customClass="RecordTableViewCell" customModule="BubblePop" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LFi-Xd-Xwl" id="Kue-sE-0vZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovk-u0-sIc">
-                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfd-AG-9Nq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="329.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOG-DL-fTh">
-                                                    <rect key="frame" x="329.5" y="0.0" width="44.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ovk-u0-sIc" firstAttribute="leading" secondItem="Kue-sE-0vZ" secondAttribute="leadingMargin" id="6Y9-zN-iPI"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ovk-u0-sIc" secondAttribute="trailing" id="O9K-tO-Z61"/>
-                                        <constraint firstItem="ovk-u0-sIc" firstAttribute="top" secondItem="Kue-sE-0vZ" secondAttribute="topMargin" id="eF0-Fs-Qav"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ovk-u0-sIc" secondAttribute="bottom" id="uX8-v9-xCd"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="playerLabel" destination="kfd-AG-9Nq" id="CY0-ow-TOi"/>
-                                    <outlet property="scoreLabel" destination="pOG-DL-fTh" id="W3Z-cl-3bk"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="1ur-Qf-rBw" id="nqS-R2-rle"/>
-                            <outlet property="delegate" destination="1ur-Qf-rBw" id="acf-zL-Zsw"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="9cl-Dk-81a"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ir3-xM-bUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1042" y="909"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vsd-O3-XSV">
             <objects>
@@ -310,7 +248,4 @@
             <point key="canvasLocation" x="-700" y="138"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="yoL-3g-PTG"/>
-    </inferredMetricsTieBreakers>
 </document>

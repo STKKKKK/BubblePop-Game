@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7B0A65F025BABDDC00DD07D8 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0A65EF25BABDDC00DD07D8 /* DataStorage.swift */; };
-		7B0A65F325BAE90C00DD07D8 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0A65F225BAE90C00DD07D8 /* RecordTableViewCell.swift */; };
-		7B0A65F525BAEE5B00DD07D8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0A65F425BAEE5B00DD07D8 /* TableViewController.swift */; };
 		7B0A65F725BAF6C500DD07D8 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0A65F625BAF6C500DD07D8 /* Record.swift */; };
 		7B4548D025BB59D400FCCBAE /* calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4548CF25BB59D400FCCBAE /* calculate.swift */; };
 		7B950E0D25B98E200075EB8F /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B950E0C25B98E200075EB8F /* Bubble.swift */; };
@@ -27,8 +25,6 @@
 
 /* Begin PBXFileReference section */
 		7B0A65EF25BABDDC00DD07D8 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
-		7B0A65F225BAE90C00DD07D8 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
-		7B0A65F425BAEE5B00DD07D8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7B0A65F625BAF6C500DD07D8 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		7B4548CF25BB59D400FCCBAE /* calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculate.swift; sourceTree = "<group>"; };
 		7B950E0C25B98E200075EB8F /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
@@ -60,7 +56,6 @@
 		7B0A65F125BAE86E00DD07D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7B0A65F225BAE90C00DD07D8 /* RecordTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,7 +119,6 @@
 				7BFF836A25B80D0400B394C4 /* SettingsViewController.swift */,
 				7BFF836C25B80D5800B394C4 /* GameViewController.swift */,
 				7BFF836E25B80D9000B394C4 /* ScoreboardViewController.swift */,
-				7B0A65F425BAEE5B00DD07D8 /* TableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -208,11 +202,9 @@
 				7BFF836B25B80D0400B394C4 /* SettingsViewController.swift in Sources */,
 				7B4548D025BB59D400FCCBAE /* calculate.swift in Sources */,
 				7B0A65F725BAF6C500DD07D8 /* Record.swift in Sources */,
-				7B0A65F525BAEE5B00DD07D8 /* TableViewController.swift in Sources */,
 				7B0A65F025BABDDC00DD07D8 /* DataStorage.swift in Sources */,
 				7BFF836D25B80D5800B394C4 /* GameViewController.swift in Sources */,
 				7BFF836925B80CA400B394C4 /* MainViewController.swift in Sources */,
-				7B0A65F325BAE90C00DD07D8 /* RecordTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

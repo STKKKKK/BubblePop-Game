@@ -40,27 +40,4 @@ class Bubble: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-//    func appear() {
-//        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-//            self.alpha = 0.8
-//        })
-//    }
-//
-//    func disappear() {
-//        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-//            self.alpha = 0
-//        }) { (_) in
-//            self.removeFromSuperview()
-//        }
-//    }
-//
-//    func pop() {
-//        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
-//            self.transform = CGAffineTransform(scaleX: 0.05, y: 0.05)
-//        }) { (_) in
-//            self.removeFromSuperview()
-//        }
-//    }
-    
 }

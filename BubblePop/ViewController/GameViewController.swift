@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
     var timer = Timer()
     var timeLeft = 0
     var currentScore = 0
-    var highScore = 0
+   // var highScore = 0
     var maxBubble = 0
     var lastPressedColor: UIColor?
     
@@ -32,22 +32,14 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let defaults = UserDefaults.standard
-//        player = defaults.string(forKey: "newPlayer")
-//        print("GamePlayViewController:", player!)
-//        highScore = defaults.integer(forKey: "highScore")
-//        highScoreLabel.text = String(highScore)
-//
-//        let settings = Settings()
-//        timeLeft = settings.gameTime
-//        timeLabel.text = String(timeLeft)
-//        scoreLabel.text = String(currentScore)
-//        maxBubble = settings.maxBubble
-        
         player = dataStorage.newPlayer
-        //print(player!)
-        highScore = dataStorage.highScore
-        highScoreLabel.text = String(highScore)
+        print("Welcome, \(player!)")
+        // highScore = dataStorage.highScore
+        if dataStorage.records.count == 0 {
+            highScoreLabel.text = "--"
+        } else {
+            highScoreLabel.text = String(dataStorage.records[0].score)
+        }
         timeLeft = dataStorage.gameTime
         timeLabel.text = String(timeLeft)
         scoreLabel.text = String(currentScore)
@@ -59,7 +51,6 @@ class GameViewController: UIViewController {
             self.updateTime()
             self.removeBubbles()
             self.addBubbles()
-            //self.removeBubble()
         }
         
     }
@@ -70,20 +61,20 @@ class GameViewController: UIViewController {
         
         if timeLeft == 0 {
             timer.invalidate()
-            
-            print("Game is over!")
-            //let defaults = UserDefaults.standard
-            //var scoreRecord = defaults.dictionary(forKey: "scoreRecord")
-            //scoreRecord[player] = score
+            //self.removeAllBubbles()
+            print("Game over!")
             
             dataStorage.setNewRecord(currentScore)
-            if currentScore > dataStorage.highScore {
-                dataStorage.setHighScore(currentScore)
-            }
-            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
+
+//            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
         }
     }
     
+    func removeAllBubbles() {
+        for bubble in bubblesView.subviews {
+            bubble.removeFromSuperview()
+        }
+    }
     
     func removeBubbles() {
         for bubble in bubblesView.subviews {
@@ -93,28 +84,14 @@ class GameViewController: UIViewController {
         }
     }
     
+    
     func addBubbles() {
-//        let bubble = UIButton()
-        
         let minX = Int(bubblesView.frame.minX) + bubbleSize
         let maxX = Int(bubblesView.frame.maxX) - minX
         let minY = Int(bubblesView.frame.minY) + bubbleSize
         let maxY = Int(bubblesView.frame.maxY) - minY
-        
         let addbubblesNum = Int.random(in: 0...maxBubble - bubblesView.subviews.count)
-//        for _ in 0...addbubblesNum {
-//            let x = Int.random(in: minX...maxX)
-//            let y = Int.random(in: minY...maxY)
-//            let bubble = Bubble(x, y, bubbleSize)
-//
-//            if bubbleOverlap(bubble) {
-//                continue
-//            }
-//
-//            bubble.addTarget(self, action: #selector(bubblePressed), for: .touchUpInside)
-//
-//            bubblesView.addSubview(bubble)
-//        }
+
         var counter = 0
         while counter < addbubblesNum {
             let x = Int.random(in: minX...maxX)
@@ -139,23 +116,10 @@ class GameViewController: UIViewController {
     }
     
     
-//    func pop() {
-//        bubble.addTarget(self, action: #selector(bubblePressed), for: .touchUpInside)
-//
-//        self.bubblesView.addSubview(bubble)
-//    }
-    
     @IBAction func bubblePressed(_ sender: Bubble) {
         sender.removeFromSuperview()
         
         if sender.backgroundColor == lastPressedColor {
-            // Round to the nearest integer
-//            let scoreGained = Double(sender.score) * 1.5
-//            if scoreGained - Double(Int(scoreGained)) >= 0.5 {
-//                currentScore += Int(scoreGained) + 1
-//            } else {
-//                currentScore += Int(scoreGained)
-//            }
             currentScore += toNearestInteger(Double(sender.score)*1.5)
         } else {
             currentScore += sender.score

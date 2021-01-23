@@ -23,7 +23,7 @@ class DataStorage {
     let maxMaxBubble = 20
     
     var newPlayer: String?
-    var highScore = 0
+   // var highScore = 0
     var records: [Record] = []
     
     init() {
@@ -36,9 +36,9 @@ class DataStorage {
             maxBubble = defaultMaxBubble
         }
         newPlayer = defaults.string(forKey: "newPlayer")
-        highScore = defaults.integer(forKey: "highScore")
-        if let recordS = defaults.array(forKey: "records") as? [Record] {
-            records = recordS
+       // highScore = defaults.integer(forKey: "highScore")
+        if let rc = defaults.array(forKey: "records") as? [Record] {
+            records = bubbleSortRecords(rc)
         }
     }
     
@@ -59,43 +59,66 @@ class DataStorage {
     
     func setNewRecord(_ score: Int) {
         if let player = newPlayer {
-            // defaults.set(score, forKey: player)
-            
-            
-            let newRecord = Record(player, score)
-            for record in records {
-                if newRecord.score > record.score {
-                    if newRecord.rank < record.rank {
-                        newRecord.setRank(record.rank)
-                    }
-                    record.dropRank()
-                } else if newRecord.score == record.score {
-                    newRecord.setRank(record.rank)
-                    break
-                }
+            let index = playerExistAt(player)
+            if index == -1 {
+                records.append(Record(player, score))
+            } else if score > records[index].score {
+                records[index] = Record(player, score)
             }
-            records.append(newRecord)
-            
-//            records.append(Record(player, score))
-            
-//            let temp = records
-//            for record in temp {
-//                if score > record.score {
-//                    switch record.rank {
-//                    case 1:
-//                        newRecord.setRank(1)
-//                    }
-                
-                
-//                if record.rank == 1 && score > record.score {
-//                    records.append(Record(player, score, rank:1))
-//                    return
-//                } else if record.rank == 2 &&
-//            }
-            
             defaults.set(records, forKey: "records")
         }
     }
+    
+    func playerExistAt(_ player: String) -> Int{
+        if records.count == 0 {
+            return -1   // player not exist
+        }
+        for i in 0...records.count-1 {
+            if records[i].player == player {
+                return i
+            }
+        }
+        return -1  // player not exist
+    }
+    
+//    func setNewRecord(_ score: Int) {
+//        if let player = newPlayer {
+//            // defaults.set(score, forKey: player)
+//
+//
+//            let newRecord = Record(player, score)
+//
+//            for record in records {
+//                if newRecord.score == record.score {
+//                    newRecord.setRank(record.rank)
+//                    break
+//                } else if newRecord.score > record.score {
+//                    if newRecord.rank < record.rank {
+//                        newRecord.setRank(record.rank)
+//                    }
+//                    record.dropRank()
+//                }
+//
+//
+//
+//                if newRecord.score > record.score {
+//                    if newRecord.rank < record.rank {
+//                        newRecord.setRank(record.rank)
+//                    }
+//                    record.dropRank()
+//                } else if newRecord.score == record.score {
+//                    newRecord.setRank(record.rank)
+//                    break
+//                }
+//            }
+//            if newRecord.rank == -1 {
+//
+//            }
+//            records.append(newRecord)
+//
+//            defaults.set(records, forKey: "records")
+//        }
+//    }
     
 //    func setHighScore(_ score: Int) {
 //        defaults.set(score, forKey: "highScore")
@@ -164,9 +187,7 @@ class DataStorage {
     // Adjust Invalid Input of Player Name Field
     func adjustName(_ inputText: String?) -> String{
         if let text = inputText {
-            if defaults.object(forKey: text) != nil {
-                return text + "1"   // adjust exist player name
-            } else if text.count == 0 {
+            if text.count == 0 {
                 return "player"    // adjust empty input
             } else {
                 return text
@@ -175,9 +196,5 @@ class DataStorage {
             return "player"  // adjust nil
         }
     }
-    
-//    else if nonPlayerkeyList.contains(text){
-//                   return text + "00"  // adjust to not conflict non-player keys
-//               }
     
 }
