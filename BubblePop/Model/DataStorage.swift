@@ -23,10 +23,7 @@ class DataStorage {
     let maxMaxBubble = 20
     
     var newPlayer = "player"
-// var playerList: [String] = []
-   // var highScore = 0
-   // var records: [Record] = []
-    
+  
     var gold = ""
     var silver = ""
     var bronze = ""
@@ -41,11 +38,6 @@ class DataStorage {
             maxBubble = defaultMaxBubble
         }
         newPlayer = defaults.string(forKey: "newPlayer") ?? "???"
-       // highScore = defaults.integer(forKey: "highScore")
-//        if let rc = defaults.array(forKey: "records") as? [Record] {
-//            records = bubbleSortRecords(rc)
-//        }
-        //playerList = defaults.array(forKey: "playerList") ?? [String]()
         
         gold = defaults.string(forKey: "gold") ?? ""
         silver = defaults.string(forKey: "silver") ?? ""
@@ -67,30 +59,6 @@ class DataStorage {
         defaults.set(newPlayer, forKey: "newPlayer")
     }
     
-//    func setNewRecord(_ score: Int) {
-//        if let player = newPlayer {
-//            let index = playerExistAt(player)
-//            if index == -1 {
-//                records.append(Record(player, score))
-//            } else if score > records[index].score {
-//                records[index] = Record(player, score)
-//            }
-//            defaults.set(records, forKey: "records")
-//        }
-//    }
-    
-//    func setNewRecord(_ score: Int) {
-//
-//        let index = playerExistAt(newPlayer)
-//        if index == -1 {
-//            records.append(Record(newPlayer, score))
-//        } else if score > records[index].score {
-//            records[index] = Record(newPlayer, score)
-//        }
-//        defaults.set(records, forKey: "records")
-//
-//    }
-    
     func getPlayerHighestScore() -> Int{
         return defaults.integer(forKey: newPlayer)
     }
@@ -110,44 +78,12 @@ class DataStorage {
         } else if score > defaults.integer(forKey: bronze) {
             defaults.set(newPlayer, forKey: "bronze")
         }
-        
-//        if !playerList.contains(newPlayer) {
-//            playerList.append(newPlayer)
-//            defaults.set(playerList, forKey: "playerList")
-//        }
     }
-    
-    
+        
     func getHighRankScore(_ rank: String) -> Int {
         let player = defaults.string(forKey: rank) ?? ""
         return defaults.integer(forKey: player)
     }
-    
-    
-    
-    
-//    func getHigestScore() -> Int {
-//        var high = 0
-//        for player in playerList {
-//            let score = defaults.integer(forKey: player)
-//            if score > high {
-//                high = score
-//            }
-//        }
-//        return high
-//    }
-    
-//    func playerExistAt(_ player: String) -> Int {
-//        if records.count == 0 {
-//            return -1
-//        }
-//        for i in 0...records.count-1 {
-//            if records[i].player == player {
-//                return i
-//            }
-//        }
-//        return -1
-//    }
         
     // Adjust Invalid Input of a Setting Field
     func adjustSetting(_ inputText: String?, _ min: Int, _ max: Int) -> Int {

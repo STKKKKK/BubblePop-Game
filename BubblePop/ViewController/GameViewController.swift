@@ -34,13 +34,6 @@ class GameViewController: UIViewController {
         player = dataStorage.newPlayer
         print("Game Start for: \(player!)")
         
-        // highScore = dataStorage.highScore
-//        if dataStorage.records.count == 0 {
-//            highScoreLabel.text = "--"
-//        } else {
-//            highScoreLabel.text = String(dataStorage.records[0].score)
-//        }
-//        highScore = dataStorage.getHigestScore()
         highScore = dataStorage.getHighRankScore("gold")
         highScoreLabel.text = String(highScore)
         
@@ -78,8 +71,6 @@ class GameViewController: UIViewController {
             print(dataStorage2.getHighRankScore("silver"))
             print(dataStorage2.bronze)
             print(dataStorage2.getHighRankScore("bronze"))
-
-            
 
 //            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
         }
