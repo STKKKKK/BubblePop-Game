@@ -19,7 +19,7 @@ class ScoreboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        records = dataStorage.records
+        // records = dataStorage.records
 //        self.tableView.reloadData()
 //        self.tableView.tableFooterView = UIView()
     }

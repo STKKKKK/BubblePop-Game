@@ -22,24 +22,28 @@ class GameViewController: UIViewController {
     var timer = Timer()
     var timeLeft = 0
     var currentScore = 0
-   // var highScore = 0
+    var highScore = 0
     var maxBubble = 0
     var lastPressedColor: UIColor?
-    
-    let dataStorage = DataStorage()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let dataStorage = DataStorage()
         player = dataStorage.newPlayer
-        print("Welcome, \(player!)")
+        print("Game Start for: \(player!)")
+        
         // highScore = dataStorage.highScore
-        if dataStorage.records.count == 0 {
-            highScoreLabel.text = "--"
-        } else {
-            highScoreLabel.text = String(dataStorage.records[0].score)
-        }
+//        if dataStorage.records.count == 0 {
+//            highScoreLabel.text = "--"
+//        } else {
+//            highScoreLabel.text = String(dataStorage.records[0].score)
+//        }
+//        highScore = dataStorage.getHigestScore()
+        highScore = dataStorage.getHighRankScore("gold")
+        highScoreLabel.text = String(highScore)
+        
         timeLeft = dataStorage.gameTime
         timeLabel.text = String(timeLeft)
         scoreLabel.text = String(currentScore)
@@ -64,7 +68,18 @@ class GameViewController: UIViewController {
             //self.removeAllBubbles()
             print("Game over!")
             
+            let dataStorage = DataStorage()
             dataStorage.setNewRecord(currentScore)
+            
+            let dataStorage2 = DataStorage()
+            print(dataStorage2.gold)
+            print(dataStorage2.getHighRankScore("gold"))
+            print(dataStorage2.silver)
+            print(dataStorage2.getHighRankScore("silver"))
+            print(dataStorage2.bronze)
+            print(dataStorage2.getHighRankScore("bronze"))
+
+            
 
 //            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
         }

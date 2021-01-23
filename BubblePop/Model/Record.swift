@@ -13,7 +13,7 @@ class Record {
     
     var player: String
     var score: Int
-//    var rank = -1   // default rank,
+//    var rank = -1   // default rank
     
     init(_ player: String, _ score: Int) {
         self.player = player
