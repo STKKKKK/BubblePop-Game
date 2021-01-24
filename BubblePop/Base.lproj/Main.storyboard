@@ -35,7 +35,7 @@
                                         <rect key="frame" x="0.0" y="148" width="134" height="30"/>
                                         <state key="normal" title="Scoreboard"/>
                                         <connections>
-                                            <segue destination="4cD-sD-jXT" kind="show" id="8Nw-ja-o39"/>
+                                            <segue destination="7r3-xo-ALq" kind="show" id="9Cn-5u-xbx"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMt-1C-s9U">
@@ -235,33 +235,33 @@
             <point key="canvasLocation" x="173.91304347826087" y="908.70535714285711"/>
         </scene>
         <!--Scoreboard View Controller-->
-        <scene sceneID="Fbo-qM-aEN">
+        <scene sceneID="xiK-zS-5kL">
             <objects>
-                <viewController id="4cD-sD-jXT" customClass="ScoreboardViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Xoj-KO-LEy">
+                <viewController id="7r3-xo-ALq" customClass="ScoreboardViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A5j-DO-69N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nfu-1N-O3h" customClass="scoreTabelView">
-                                <rect key="frame" x="62" y="116.5" width="290" height="717"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IoL-3c-dPG">
+                                <rect key="frame" x="87" y="161.5" width="240" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scoreCell" textLabel="3f8-VA-Ffi" detailTextLabel="3bd-cf-4Pr" style="IBUITableViewCellStyleValue1" id="2KQ-wI-ypr" customClass="scoreCell">
-                                        <rect key="frame" x="0.0" y="28" width="290" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scoreCell" textLabel="Mri-DI-sDg" detailTextLabel="Ecd-8j-Uye" style="IBUITableViewCellStyleValue1" id="DXJ-HG-cOM">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2KQ-wI-ypr" id="57B-NO-dsG">
-                                            <rect key="frame" x="0.0" y="0.0" width="290" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DXJ-HG-cOM" id="a9f-cG-qqf">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3f8-VA-Ffi">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mri-DI-sDg">
                                                     <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3bd-cf-4Pr">
-                                                    <rect key="frame" x="230" y="12" width="44" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ecd-8j-Uye">
+                                                    <rect key="frame" x="180" y="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -272,28 +272,28 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="4cD-sD-jXT" id="D0m-gl-zrp"/>
-                                    <outlet property="delegate" destination="4cD-sD-jXT" id="hTJ-md-Vv7"/>
+                                    <outlet property="dataSource" destination="7r3-xo-ALq" id="Yhi-ld-6uQ"/>
+                                    <outlet property="delegate" destination="7r3-xo-ALq" id="uYq-2W-dBd"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="nfu-1N-O3h" firstAttribute="centerY" secondItem="DKZ-7d-9mg" secondAttribute="centerY" id="FFc-e4-BSp"/>
-                            <constraint firstItem="nfu-1N-O3h" firstAttribute="centerX" secondItem="DKZ-7d-9mg" secondAttribute="centerX" id="GP6-CT-MTe"/>
-                            <constraint firstItem="nfu-1N-O3h" firstAttribute="height" secondItem="Xoj-KO-LEy" secondAttribute="height" multiplier="0.8" id="Ks9-Un-76p"/>
-                            <constraint firstItem="nfu-1N-O3h" firstAttribute="width" secondItem="Xoj-KO-LEy" secondAttribute="width" multiplier="0.7" id="ZV1-RL-cuu"/>
+                            <constraint firstItem="IoL-3c-dPG" firstAttribute="centerY" secondItem="Vz3-qV-Q1Z" secondAttribute="centerY" id="1fi-Jj-QfA"/>
+                            <constraint firstItem="IoL-3c-dPG" firstAttribute="centerX" secondItem="Vz3-qV-Q1Z" secondAttribute="centerX" id="7ZY-3x-RHi"/>
+                            <constraint firstItem="IoL-3c-dPG" firstAttribute="height" secondItem="A5j-DO-69N" secondAttribute="height" multiplier="0.7" id="Ini-xv-kPY"/>
+                            <constraint firstItem="IoL-3c-dPG" firstAttribute="width" secondItem="A5j-DO-69N" secondAttribute="width" multiplier="0.57971" id="q7Q-0j-pQ9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="DKZ-7d-9mg"/>
+                        <viewLayoutGuide key="safeArea" id="Vz3-qV-Q1Z"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9Xd-3J-kq9"/>
+                    <navigationItem key="navigationItem" id="hv9-Hc-wfW"/>
                     <connections>
-                        <outlet property="scoreTableView" destination="nfu-1N-O3h" id="OkU-ca-Grp"/>
+                        <outlet property="scoreTableView" destination="IoL-3c-dPG" id="BnS-TN-DPv"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DSq-h6-JHq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTj-3A-d5b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1058" y="909"/>
+            <point key="canvasLocation" x="1079" y="900"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vsd-O3-XSV">

@@ -75,7 +75,7 @@ class GameViewController: UIViewController {
 //                print(records[2].player, records[2].score)
 //            }
 
-            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
+//            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
         }
     }
     
