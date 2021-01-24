@@ -31,5 +31,5 @@ func bubbleSortRecords(_ inputRecords: [Record]) -> [Record] {
         }
         i += 1
     }
-    return records
+    return records.reversed()
 }

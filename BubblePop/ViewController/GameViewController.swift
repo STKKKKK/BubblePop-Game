@@ -34,7 +34,8 @@ class GameViewController: UIViewController {
         player = dataStorage.newPlayer
         print("Game Start for: \(player!)")
         
-        highScore = dataStorage.getHighRankScore("gold")
+//        highScore = dataStorage.getHighRankScore("gold")
+        highScore = dataStorage.highScore
         highScoreLabel.text = String(highScore)
         
         timeLeft = dataStorage.gameTime
@@ -42,12 +43,14 @@ class GameViewController: UIViewController {
         scoreLabel.text = String(currentScore)
         maxBubble = dataStorage.maxBubble
         
-        
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             timer in
             self.updateTime()
             self.removeBubbles()
             self.addBubbles()
+            if self.timeLeft == 0 {
+                self.removeAllBubbles()
+            }
         }
         
     }
@@ -58,19 +61,27 @@ class GameViewController: UIViewController {
         
         if timeLeft == 0 {
             timer.invalidate()
-            //self.removeAllBubbles()
             print("Game over!")
             
             let dataStorage = DataStorage()
             dataStorage.setNewRecord(currentScore)
             
             let dataStorage2 = DataStorage()
-            print(dataStorage2.gold)
-            print(dataStorage2.getHighRankScore("gold"))
-            print(dataStorage2.silver)
-            print(dataStorage2.getHighRankScore("silver"))
-            print(dataStorage2.bronze)
-            print(dataStorage2.getHighRankScore("bronze"))
+//            print(dataStorage2.gold)
+//            print(dataStorage2.getHighRankScore("gold"))
+//            print(dataStorage2.silver)
+//            print(dataStorage2.getHighRankScore("silver"))
+//            print(dataStorage2.bronze)
+//            print(dataStorage2.getHighRankScore("bronze"))
+            let records = bubbleSortRecords(dataStorage2.getDecodeRecords())
+            print(records[0].player, records[0].score)
+            if records.count >= 2 {
+                print(records[1].player, records[1].score)
+            }
+            if records.count >= 3 {
+                print(records[2].player, records[2].score)
+            }
+            print(records)
 
 //            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
         }
@@ -89,8 +100,7 @@ class GameViewController: UIViewController {
             }
         }
     }
-    
-    
+        
     func addBubbles() {
         let minX = Int(bubblesView.frame.minX) + bubbleSize
         let maxX = Int(bubblesView.frame.maxX) - minX
@@ -121,7 +131,6 @@ class GameViewController: UIViewController {
         return false
     }
     
-    
     @IBAction func bubblePressed(_ sender: Bubble) {
         sender.removeFromSuperview()
         
@@ -132,6 +141,10 @@ class GameViewController: UIViewController {
         }
         lastPressedColor = sender.backgroundColor
         scoreLabel.text = String(currentScore)
+        
+        if currentScore > highScore {
+            highScoreLabel.text = String(currentScore)
+        }
     }
     
 }
