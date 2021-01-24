@@ -13,6 +13,10 @@
 		7B3414BB25BDA463006AFD37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B3414B925BDA463006AFD37 /* Main.storyboard */; };
 		7B3414BD25BDA464006AFD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B3414BC25BDA464006AFD37 /* Assets.xcassets */; };
 		7B3414C025BDA464006AFD37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B3414BE25BDA464006AFD37 /* LaunchScreen.storyboard */; };
+		7B7A6DB425BDA615009C8ABB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A6DB325BDA615009C8ABB /* MainViewController.swift */; };
+		7B7A6DB625BDA64E009C8ABB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A6DB525BDA64E009C8ABB /* SettingsViewController.swift */; };
+		7B7A6DB825BDA68A009C8ABB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A6DB725BDA68A009C8ABB /* GameViewController.swift */; };
+		7B7A6DBA25BDA6B4009C8ABB /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A6DB925BDA6B4009C8ABB /* ScoreboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		7B3414BC25BDA464006AFD37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B3414BF25BDA464006AFD37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B3414C125BDA464006AFD37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B7A6DB325BDA615009C8ABB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7B7A6DB525BDA64E009C8ABB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7B7A6DB725BDA68A009C8ABB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7B7A6DB925BDA6B4009C8ABB /* ScoreboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +68,39 @@
 				7B3414B525BDA463006AFD37 /* SceneDelegate.swift */,
 				7B3414B725BDA463006AFD37 /* ViewController.swift */,
 				7B3414B925BDA463006AFD37 /* Main.storyboard */,
+				7B7A6DB025BDA534009C8ABB /* ViewController */,
+				7B7A6DB125BDA54C009C8ABB /* Model */,
+				7B7A6DB225BDA553009C8ABB /* Utility */,
 				7B3414BC25BDA464006AFD37 /* Assets.xcassets */,
 				7B3414BE25BDA464006AFD37 /* LaunchScreen.storyboard */,
 				7B3414C125BDA464006AFD37 /* Info.plist */,
 			);
 			path = BubblePop;
+			sourceTree = "<group>";
+		};
+		7B7A6DB025BDA534009C8ABB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7B7A6DB325BDA615009C8ABB /* MainViewController.swift */,
+				7B7A6DB525BDA64E009C8ABB /* SettingsViewController.swift */,
+				7B7A6DB725BDA68A009C8ABB /* GameViewController.swift */,
+				7B7A6DB925BDA6B4009C8ABB /* ScoreboardViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7B7A6DB125BDA54C009C8ABB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B7A6DB225BDA553009C8ABB /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B7A6DBA25BDA6B4009C8ABB /* ScoreboardViewController.swift in Sources */,
 				7B3414B825BDA463006AFD37 /* ViewController.swift in Sources */,
 				7B3414B425BDA463006AFD37 /* AppDelegate.swift in Sources */,
 				7B3414B625BDA463006AFD37 /* SceneDelegate.swift in Sources */,
+				7B7A6DB625BDA64E009C8ABB /* SettingsViewController.swift in Sources */,
+				7B7A6DB825BDA68A009C8ABB /* GameViewController.swift in Sources */,
+				7B7A6DB425BDA615009C8ABB /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
