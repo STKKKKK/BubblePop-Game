@@ -34,6 +34,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFG-iT-1nm">
                                         <rect key="frame" x="0.0" y="148" width="134" height="30"/>
                                         <state key="normal" title="Scoreboard"/>
+                                        <connections>
+                                            <segue destination="4cD-sD-jXT" kind="show" id="8Nw-ja-o39"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMt-1C-s9U">
                                         <rect key="frame" x="0.0" y="220" width="134" height="30"/>
@@ -230,6 +233,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MME-oG-kvI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="173.91304347826087" y="908.70535714285711"/>
+        </scene>
+        <!--Scoreboard View Controller-->
+        <scene sceneID="Fbo-qM-aEN">
+            <objects>
+                <viewController id="4cD-sD-jXT" customClass="ScoreboardViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xoj-KO-LEy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nfu-1N-O3h" customClass="scoreTabelView">
+                                <rect key="frame" x="62" y="116.5" width="290" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="3f8-VA-Ffi" detailTextLabel="3bd-cf-4Pr" style="IBUITableViewCellStyleValue1" id="2KQ-wI-ypr" customClass="scoreCell">
+                                        <rect key="frame" x="0.0" y="28" width="290" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2KQ-wI-ypr" id="57B-NO-dsG">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3f8-VA-Ffi">
+                                                    <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3bd-cf-4Pr">
+                                                    <rect key="frame" x="230" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4cD-sD-jXT" id="D0m-gl-zrp"/>
+                                    <outlet property="delegate" destination="4cD-sD-jXT" id="hTJ-md-Vv7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nfu-1N-O3h" firstAttribute="centerY" secondItem="DKZ-7d-9mg" secondAttribute="centerY" id="FFc-e4-BSp"/>
+                            <constraint firstItem="nfu-1N-O3h" firstAttribute="centerX" secondItem="DKZ-7d-9mg" secondAttribute="centerX" id="GP6-CT-MTe"/>
+                            <constraint firstItem="nfu-1N-O3h" firstAttribute="height" secondItem="Xoj-KO-LEy" secondAttribute="height" multiplier="0.8" id="Ks9-Un-76p"/>
+                            <constraint firstItem="nfu-1N-O3h" firstAttribute="width" secondItem="Xoj-KO-LEy" secondAttribute="width" multiplier="0.7" id="ZV1-RL-cuu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DKZ-7d-9mg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Xd-3J-kq9"/>
+                    <connections>
+                        <outlet property="scoreTableView" destination="nfu-1N-O3h" id="OkU-ca-Grp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DSq-h6-JHq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1058" y="909"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vsd-O3-XSV">

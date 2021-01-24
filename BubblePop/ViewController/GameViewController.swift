@@ -34,7 +34,6 @@ class GameViewController: UIViewController {
         player = dataStorage.newPlayer
         print("Game Start for: \(player!)")
         
-//        highScore = dataStorage.getHighRankScore("gold")
         highScore = dataStorage.highScore
         highScoreLabel.text = String(highScore)
         
@@ -66,24 +65,17 @@ class GameViewController: UIViewController {
             let dataStorage = DataStorage()
             dataStorage.setNewRecord(currentScore)
             
-            let dataStorage2 = DataStorage()
-//            print(dataStorage2.gold)
-//            print(dataStorage2.getHighRankScore("gold"))
-//            print(dataStorage2.silver)
-//            print(dataStorage2.getHighRankScore("silver"))
-//            print(dataStorage2.bronze)
-//            print(dataStorage2.getHighRankScore("bronze"))
-            let records = bubbleSortRecords(dataStorage2.getDecodeRecords())
-            print(records[0].player, records[0].score)
-            if records.count >= 2 {
-                print(records[1].player, records[1].score)
-            }
-            if records.count >= 3 {
-                print(records[2].player, records[2].score)
-            }
-            print(records)
+//            let dataStorage2 = DataStorage()
+//            let records = bubbleSortRecords(dataStorage2.getDecodeRecords())
+//            print(records[0].player, records[0].score)
+//            if records.count >= 2 {
+//                print(records[1].player, records[1].score)
+//            }
+//            if records.count >= 3 {
+//                print(records[2].player, records[2].score)
+//            }
 
-//            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
+            self.performSegue(withIdentifier: "scoreboardSegue", sender: nil)
         }
     }
     
