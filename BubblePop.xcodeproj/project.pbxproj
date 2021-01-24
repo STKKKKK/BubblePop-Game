@@ -22,6 +22,7 @@
 		7BEB90DF25BE0AD9004DDD0C /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB90DE25BE0AD9004DDD0C /* Keys.swift */; };
 		7BEB90E125BE0B06004DDD0C /* SettingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB90E025BE0B06004DDD0C /* SettingStorage.swift */; };
 		7BEB90E325BE0B2C004DDD0C /* RecordStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB90E225BE0B2C004DDD0C /* RecordStorage.swift */; };
+		7BEB90E525BE0B8B004DDD0C /* Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB90E425BE0B8B004DDD0C /* Algorithms.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		7BEB90DE25BE0AD9004DDD0C /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		7BEB90E025BE0B06004DDD0C /* SettingStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingStorage.swift; sourceTree = "<group>"; };
 		7BEB90E225BE0B2C004DDD0C /* RecordStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordStorage.swift; sourceTree = "<group>"; };
+		7BEB90E425BE0B8B004DDD0C /* Algorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithms.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		7BEB90D125BE0943004DDD0C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				7BEB90E425BE0B8B004DDD0C /* Algorithms.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				7BEB90D925BE09EC004DDD0C /* ScoreboardViewController.swift in Sources */,
 				7BEB90D525BE09A3004DDD0C /* GameViewController.swift in Sources */,
 				7BEB90E325BE0B2C004DDD0C /* RecordStorage.swift in Sources */,
+				7BEB90E525BE0B8B004DDD0C /* Algorithms.swift in Sources */,
 				7BEB90E125BE0B06004DDD0C /* SettingStorage.swift in Sources */,
 				7BEB90DD25BE0AB0004DDD0C /* Record.swift in Sources */,
 				7BB6801E25BE0887001D03DE /* ViewController.swift in Sources */,
