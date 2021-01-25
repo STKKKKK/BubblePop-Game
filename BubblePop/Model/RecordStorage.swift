@@ -18,10 +18,6 @@ class RecordStorage {
     
     
     init() {
-        self.reload()
-    }
-    
-    func reload() {
         newPlayer = defaults.string(forKey: Keys.newPlayer) ?? "???"
         highScore = defaults.integer(forKey: Keys.highScore)
         records = defaults.string(forKey: Keys.records) ?? ""

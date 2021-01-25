@@ -29,14 +29,12 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let settings = SettingStorage()
         let records = RecordStorage()
-        player = records.newPlayer
-        print("Game Start for: \(player!)")
+        let settings = SettingStorage()
         
-        highScore = records.highScore
+        player = records.newPlayer
         timeLeft = settings.gameTime
+        highScore = records.highScore
         maxBubble = settings.maxBubble
         
         timeLabel.text = String(timeLeft)
@@ -60,7 +58,6 @@ class GameViewController: UIViewController {
         
         if timeLeft == 0 {
             timer.invalidate()
-            print("Game over!")
             let records = RecordStorage()
             records.setNewRecord(currentScore)
         }
@@ -81,9 +78,7 @@ class GameViewController: UIViewController {
     }
         
     func addBubbles() {
-//        let minX = Int(bubbleView.frame.minX) + bubbleSize
         let maxX = Int(bubbleView.frame.maxX) - Int(bubbleView.frame.minX) - bubbleSize
-//        let minY = Int(bubbleView.frame.minY) + bubbleSize
         let maxY = Int(bubbleView.frame.maxY) - Int(bubbleView.frame.minY) - bubbleSize
         let addbubblesNum = Int.random(in: 0...maxBubble - bubbleView.subviews.count)
 

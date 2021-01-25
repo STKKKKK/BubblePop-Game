@@ -24,10 +24,6 @@ class SettingStorage {
     
     
     init() {
-        self.reload()
-    }
-    
-    func reload() {
         gameTime = defaults.integer(forKey: Keys.gameTime)
         maxBubble = defaults.integer(forKey: Keys.maxBubble)
         if gameTime == 0 {

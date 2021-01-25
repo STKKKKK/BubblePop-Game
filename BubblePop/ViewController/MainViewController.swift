@@ -11,15 +11,14 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
-    
-    let records = RecordStorage()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func startGame(_ sender: Any) {
+        let records = RecordStorage()
         records.setNewPlayer(nameTextField.text)
     }
 
