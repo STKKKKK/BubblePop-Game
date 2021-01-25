@@ -81,16 +81,16 @@ class GameViewController: UIViewController {
     }
         
     func addBubbles() {
-        let minX = Int(bubbleView.frame.minX) + bubbleSize/2
-        let maxX = Int(bubbleView.frame.maxX) - minX
-        let minY = Int(bubbleView.frame.minY) + bubbleSize/2
-        let maxY = Int(bubbleView.frame.maxY) - minY
+//        let minX = Int(bubbleView.frame.minX) + bubbleSize
+        let maxX = Int(bubbleView.frame.maxX) - Int(bubbleView.frame.minX) - bubbleSize
+//        let minY = Int(bubbleView.frame.minY) + bubbleSize
+        let maxY = Int(bubbleView.frame.maxY) - Int(bubbleView.frame.minY) - bubbleSize
         let addbubblesNum = Int.random(in: 0...maxBubble - bubbleView.subviews.count)
 
         var counter = 0
         while counter < addbubblesNum {
-            let x = Int.random(in: minX...maxX)
-            let y = Int.random(in: minY...maxY)
+            let x = Int.random(in: 0...maxX)
+            let y = Int.random(in: 0...maxY)
             let bubble = Bubble(x, y, bubbleSize)
             
             if !bubbleOverlap(bubble) {

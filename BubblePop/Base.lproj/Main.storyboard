@@ -261,7 +261,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AkB-lg-Mbm">
-                                <rect key="frame" x="62" y="161.5" width="290" height="627"/>
+                                <rect key="frame" x="62" y="206" width="290" height="538"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scoreCell" textLabel="FcX-MK-zRk" detailTextLabel="zVg-fU-v9C" style="IBUITableViewCellStyleValue1" id="mTr-hw-J7x">
@@ -294,13 +294,21 @@
                                     <outlet property="delegate" destination="M1p-fB-GjX" id="pfX-Hc-ZpO"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score Board" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFK-xw-Due">
+                                <rect key="frame" x="141.5" y="113" width="131.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="AkB-lg-Mbm" firstAttribute="centerY" secondItem="6a7-Dx-fNz" secondAttribute="centerY" id="7jY-Af-H9N"/>
                             <constraint firstItem="AkB-lg-Mbm" firstAttribute="centerX" secondItem="6a7-Dx-fNz" secondAttribute="centerX" id="BT1-L4-zQa"/>
-                            <constraint firstItem="AkB-lg-Mbm" firstAttribute="height" secondItem="GPK-lD-RIe" secondAttribute="height" multiplier="0.7" id="YVd-hT-RS5"/>
+                            <constraint firstItem="xFK-xw-Due" firstAttribute="top" secondItem="6a7-Dx-fNz" secondAttribute="top" constant="25" id="C7w-E2-edg"/>
+                            <constraint firstItem="AkB-lg-Mbm" firstAttribute="height" secondItem="GPK-lD-RIe" secondAttribute="height" multiplier="0.6" id="YVd-hT-RS5"/>
                             <constraint firstItem="AkB-lg-Mbm" firstAttribute="width" secondItem="GPK-lD-RIe" secondAttribute="width" multiplier="0.7" id="rh6-tl-r2U"/>
+                            <constraint firstItem="xFK-xw-Due" firstAttribute="centerX" secondItem="6a7-Dx-fNz" secondAttribute="centerX" id="vK9-Ij-j8z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6a7-Dx-fNz"/>
                     </view>
@@ -311,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HY7-oD-amR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="886"/>
+            <point key="canvasLocation" x="1008.6956521739131" y="885.9375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xF6-KC-qda">
